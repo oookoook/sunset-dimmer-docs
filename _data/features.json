@@ -1,27 +1,27 @@
 [
   {
-    "title": "Free Consultation",
-    "description": "New clients receive an obligation free consultation.",
+    "title": "Fully automatic",
+    "description": "Setup once, save your eyes from strain every day.",
     "image": {
-      "url": "images/features/noun_branding_1885335.svg",
+      "url": "images/features/noun-automatic-4647406.svg",
       "width": 80,
       "height": 80
     }
   },
   {
-    "title": "Certified Accountants",
-    "description": "All members of our team are certified accountants.",
+    "title": "Reduces eye strain",
+    "description": "Makes your nighttime work much more comfortable and more productive.",
     "image": {
-      "url": "images/features/noun_The Process_1885341.svg",
+      "url": "images/features/211661_eye_icon.svg",
       "width": 80,
       "height": 80
     }
   },
   {
-    "title": "Tax Compliance",
-    "description": "We stay up to date on the latest changes to the tax code.",
+    "title": "Display support",
+    "description": "Almost every display and monitor is supported.",
     "image": {
-      "url": "images/features/noun_3d modeling_1885342.svg",
+      "url": "images/features/838728_computer_desktop_device_display_monitor_icon.svg",
       "width": 80,
       "height": 80
     }

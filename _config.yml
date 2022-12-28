@@ -1,14 +1,14 @@
 baseurl: '/'
 permalink: pretty
-title: 'Jekyll Serif'
+title: 'Sunset Dimmer'
 
 logo:
-  mobile: "images/logo/logo-mobile.svg"
+  mobile: "images/logo/logo.png"
   mobile_height: "32px"
   mobile_width: "32px"
-  desktop: "images/logo/logo.svg"
+  desktop: "images/logo/logo.png"
   desktop_height: "32px"
-  desktop_width: "120px"
+  desktop_width: "32px"
 
 home: 
   limit_services: 6
@@ -18,6 +18,8 @@ collections:
     output: true
     sort_by: weight
   team:
+    output: true
+  testimonial:
     output: true
 
 defaults:
@@ -31,6 +33,11 @@ defaults:
       type: "team"
     values:
       layout: "team"
+  - scope:
+      path: ""
+      type: "testimonial"
+    values:
+      layout: "testimonial"
 
 sass:
   style: compressed # possible values: nested expanded compact compressed

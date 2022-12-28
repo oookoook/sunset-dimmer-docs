@@ -7,41 +7,20 @@ bodyClass: "page-home"
   <div class="container">
     <div class="row justify-content-start">
       <div class="col-12 col-md-7 col-lg-6 order-2 order-md-1">
-        {{ content }}
+        <h1 class="title">{{ page.heading }}</h1>
+        <p>{{ page.claim }}</p>
         {% if page.show_call_box %}
-          {% include call.html show_button=true %}
+        {% include call.html show_button=true %}
         {% endif %}
+        {% include ms-store.html cid=hero %}
       </div>
       {% if page.intro_image %}
       <div class="col-12 col-md-5 col-lg-6 order-1 order-md-2 position-relative">
-        <img alt="{{ page.title }}" class="intro-image{% if page.intro_image_absolute %} intro-image-absolute{% endif %}{% if page.intro_image_hide_on_mobile %} intro-image-hide-mobile{% endif %}" src="{{ page.intro_image | relURL }}" />
+        <img alt="{{ page.title }}"
+          class="intro-image{% if page.intro_image_absolute %} intro-image-absolute{% endif %}{% if page.intro_image_hide_on_mobile %} intro-image-hide-mobile{% endif %}"
+          src="{{ page.intro_image | relURL }}" />
       </div>
       {% endif %}
-    </div>
-  </div>
-</div>
-
-<div class="strip">
-  <div class="container pt-6 pb-6 pb-md-10">
-    <div class="row justify-content-start">
-      {% assign limit = site.home.limit_services | default: 6 %}
-      {% for service in site.services limit: limit %}
-      <div class="col-12 col-md-4 mb-1">
-        <div class="service service-summary">
-          <div class="service-content">
-            <h2 class="service-title">
-              <a href="{{ service.url | relative_url }}">{{ service.title }}</a>
-            </h2>
-            <p>{{ service.content | markdownify | strip_html | truncate: 100 }}</p>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-auto">
-        <a class="button button-primary" href="{{ "services" | relative_url }}">View All Services</a>
-      </div>
     </div>
   </div>
 </div>
@@ -55,7 +34,8 @@ bodyClass: "page-home"
       <div class="col-12 col-md-6 col-lg-4 mb-2">
         <div class="feature">
           {% if feature.image %}
-          <div class="feature-image"><img alt="{{ feature.title }} logo" src="{{ feature.image.url | relative_url }}" width="{{ feature.image.width }}" height="{{ feature.image.height }}" /></div>
+          <div class="feature-image"><img alt="{{ feature.title }} logo" src="{{ feature.image.url | relative_url }}"
+              width="{{ feature.image.width }}" height="{{ feature.image.height }}" /></div>
           {% endif %}
           <h2 class="feature-title">{{ feature.title }}</h2>
           <div class="feature-content">{{ feature.description }}</div>
@@ -67,3 +47,140 @@ bodyClass: "page-home"
   </div>
 </div>
 {% endif %}
+
+{% if site.data.usecases %}
+<div class="strip">
+  <div class="container pt-6 pb-6 pb-md-6">
+    {% if page.usecase_title %}
+    <h1>{{ page.usecase_title }}</h1>
+    {% endif %}
+    <div class="row justify-content-start mt-4">
+      {% for uc in site.data.usecases %}
+      <div class="col-12 col-md-4 mb-1">
+        <div class="service service-summary">
+          <div class="service-content">
+            <h2 class="service-title">
+              {{ uc.title }}</a>
+            </h2>
+            <p>{{ uc.description | markdownify }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <!--
+    <div class="row justify-content-center">
+      <div class="col-auto">
+        <a class="button button-primary" href="{{ "services" | relative_url }}">View All Services</a>
+      </div>
+    </div>
+    -->
+  </div>
+</div>
+{% endif %}
+
+<div class="strip strip-grey">
+  <div class="container pt-3 pb-3 pt-md-3 pb-md-3">
+    <h1>{{ page.problem_title }}</h1>
+    <div class="row justify-content-start">
+      <div class="col-12 content">
+        {% capture problem_include %}{% include_relative _landing/problem.md %}{% endcapture %}
+        {{ problem_include | markdownify }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="strip">
+  <div class="container pt-3 pb-3 pt-md-3 pb-md-3">
+    <div class="row justify-content-center">
+      {% include ms-store.html cid=problem %}
+    </div>
+  </div>
+</div>
+
+<div class="strip">
+  <div class="container pt-3 pb-3 pt-md-3 pb-md-3">
+    <h1>{{ page.desc_title }}</h1>
+    <div class="row justify-content-start">
+      <div class="col-12 content">
+        {% capture problem_include %}{% include_relative _landing/desc.md %}{% endcapture %}
+        {{ problem_include | markdownify }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="strip strip-grey">
+  <div class="container pt-3 pb-3 pt-md-3 pb-md-3">
+    <h1>{{ page.args_title }}</h1>
+    <div class="row justify-content-start">
+      <div class="col-12 content">
+        {% capture problem_include %}{% include_relative _landing/arguments.md %}{% endcapture %}
+        {{ problem_include | markdownify }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="strip">
+  <div class="container pt-3 pb-3 pt-md-3 pb-md-3">
+    <div class="row justify-content-center">
+      {% include ms-store.html cid=args %}
+    </div>
+  </div>
+</div>
+{% if site.testimonial %}
+<div class="strip">
+  <div class="container pt-3 pb-3 pt-md-3 pb-md-3">
+    <h1>{{ page.testimonials_title }}</h1>
+    <div class="row">
+      {% assign promoted_testimonials = site.testimonial | where: "promoted", true | sort: "weight" %}
+      {% for testimonial in promoted_testimonials %}
+      <div class="col-12 col-md-6 mb-2">
+        <div class="testimonial testimonial-summary testimonial-summary-large">
+          {% if testimonial.image %}
+          <div class="testimonial-image">
+            <img width="90" height="90" alt="{{ testimonial.title }}" class="img-fluid mb-2"
+              src="{{ testimonial.image | relative_url }}" />
+          </div>
+          {% endif %}
+          <div class="testimonial-meta">
+            <h2 class="testimonial-name"><!--<a href="{{ testimonial.url | relative_url }}">{{ testimonial.title }}</a>-->{{ testimonial.title }}</h2>
+            <p class="testimonial-description">{{ testimonial.jobtitle }}</p>
+            {% if testimonial.stars%}
+              <p>Rating: {% for i in (1..testimonial.stars) %}<img src="images/testimonial/star.svg">{% endfor %}</p>
+            {% endif %}
+            {% if testimonial.exurl %}
+            <!--
+            <a target="_blank" href="{{ testimonial.exturl }}" rel="noreferrer">Show more</a>
+            -->
+            {% endif %}
+          </div>
+          <div class="testimonial-content">{{ testimonial.content | truncate: 500 }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}
+<div class="strip">
+  <div class="container pt-3 pb-3 pt-md-3 pb-md-3">
+    <div class="row justify-content-start">
+      <div class="col-12">
+        <div class="content">
+          {{ content }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="strip strip-grey">
+  <div class="container pt-3 pb-6 pt-md-3 pb-md-10">
+    <div class="row justify-content-center">
+      {% include ms-store.html cid=end %}
+    </div>
+  </div>
+</div>
