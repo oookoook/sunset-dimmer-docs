@@ -8,3 +8,4 @@ Sunset Dimmer integrates seamlessly with Windows **Night Light** so you can help
 - Sunset Dimmer **reduces the brightness** difference between your displays and ambient light sources. 
 
 Your eyes will **not be stressed and strained** anymore.
+

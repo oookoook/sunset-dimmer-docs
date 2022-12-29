@@ -1,26 +1,29 @@
-[
-  {
-    "title": "Study",
-    "description": "Are you a student and have to **finish your thesis**?"
-  },
-  {
-    "title": "Research",
-    "description": " Are you a researcher trying to **write a paper** about your breakthrough research?"
-  },
-  {
-    "title": "Software",
-    "description": " Are you a software developer **fixing the last bugs** before release?"
-  },
-  {
-    "title": "Marketing",
-    "description": " Are you a marketing expert or copywriter **preparing campaigns** after a day packed with meetings?"
-  },
-  {
-    "title": "Arts",
-    "description": " Are you a novelist **searching for inspiration** in the calm evening hours?"
-  },
-  {
-    "title": "Media",
-    "description": "Are you a journalist finishing the **scandalous investigative report** for tomorrow's issue?"
-  }
-]
+{
+  "title": "Can Sunset Dimmer help you?",
+  "items": [
+    {
+      "title": "Study",
+      "description": "Are you a student and have to **finish your thesis**?"
+    },
+    {
+      "title": "Research",
+      "description": " Are you a researcher trying to **write a paper** about your breakthrough research?"
+    },
+    {
+      "title": "Software",
+      "description": " Are you a software developer **fixing the last bugs** before release?"
+    },
+    {
+      "title": "Marketing",
+      "description": " Are you a marketing expert or copywriter **preparing campaigns** after a day packed with meetings?"
+    },
+    {
+      "title": "Arts",
+      "description": " Are you a novelist **searching for inspiration** in the calm evening hours?"
+    },
+    {
+      "title": "Media",
+      "description": "Are you a journalist finishing the **scandalous investigative report** for tomorrow's issue?"
+    }
+  ]
+}

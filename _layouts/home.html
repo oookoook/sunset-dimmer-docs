@@ -7,8 +7,8 @@ bodyClass: "page-home"
   <div class="container">
     <div class="row justify-content-start">
       <div class="col-12 col-md-7 col-lg-6 order-2 order-md-1">
-        <h1 class="title">{{ page.heading }}</h1>
-        <p>{{ page.claim }}</p>
+        <h1 class="title">{{ site.data.landing_titles.heading }}</h1>
+        <p>{{ site.data.landing_titles.claim }}</p>
         {% if page.show_call_box %}
         {% include call.html show_button=true %}
         {% endif %}
@@ -51,11 +51,11 @@ bodyClass: "page-home"
 {% if site.data.usecases %}
 <div class="strip">
   <div class="container pt-6 pb-6 pb-md-6">
-    {% if page.usecase_title %}
-    <h1>{{ page.usecase_title }}</h1>
+    {% if site.data.usecases.title %}
+    <h1>{{ site.data.usecases.title }}</h1>
     {% endif %}
     <div class="row justify-content-start mt-4">
-      {% for uc in site.data.usecases %}
+      {% for uc in site.data.usecases.items %}
       <div class="col-12 col-md-4 mb-1">
         <div class="service service-summary">
           <div class="service-content">
@@ -81,7 +81,7 @@ bodyClass: "page-home"
 
 <div class="strip strip-grey">
   <div class="container pt-3 pb-3 pt-md-3 pb-md-3">
-    <h1>{{ page.problem_title }}</h1>
+    <h1>{{ site.data.landing_titles.problem_title }}</h1>
     <div class="row justify-content-start">
       <div class="col-12 content">
         {% capture problem_include %}{% include_relative _landing/problem.md %}{% endcapture %}
@@ -101,11 +101,11 @@ bodyClass: "page-home"
 
 <div class="strip">
   <div class="container pt-3 pb-3 pt-md-3 pb-md-3">
-    <h1>{{ page.desc_title }}</h1>
+    <h1>{{ site.data.landing_titles.desc_title }}</h1>
     <div class="row justify-content-start">
       <div class="col-12 content">
-        {% capture problem_include %}{% include_relative _landing/desc.md %}{% endcapture %}
-        {{ problem_include | markdownify }}
+        {% capture desc_include %}{% include_relative _landing/desc.md %}{% endcapture %}
+        {{ desc_include | markdownify }}
       </div>
     </div>
   </div>
@@ -113,11 +113,11 @@ bodyClass: "page-home"
 
 <div class="strip strip-grey">
   <div class="container pt-3 pb-3 pt-md-3 pb-md-3">
-    <h1>{{ page.args_title }}</h1>
+    <h1>{{ site.data.landing_titles.args_title }}</h1>
     <div class="row justify-content-start">
       <div class="col-12 content">
-        {% capture problem_include %}{% include_relative _landing/arguments.md %}{% endcapture %}
-        {{ problem_include | markdownify }}
+        {% capture args_include %}{% include_relative _landing/arguments.md %}{% endcapture %}
+        {{ args_include | markdownify }}
       </div>
     </div>
   </div>
@@ -133,7 +133,7 @@ bodyClass: "page-home"
 {% if site.testimonial %}
 <div class="strip">
   <div class="container pt-3 pb-3 pt-md-3 pb-md-3">
-    <h1>{{ page.testimonials_title }}</h1>
+    <h1>{{ site.data.landing_titles.testimonials_title }}</h1>
     <div class="row">
       {% assign promoted_testimonials = site.testimonial | where: "promoted", true | sort: "weight" %}
       {% for testimonial in promoted_testimonials %}
@@ -177,8 +177,54 @@ bodyClass: "page-home"
   </div>
 </div>
 
+{%if site.data.functions %}
+
+<div class="strip">
+  <div class="container pt-3 pb-3 pt-md-3 pb-md-3">
+    <h1>{{ site.data.functions.title }}</h1>
+  </div>
+</div>
+
+{% for function in site.data.functions.items %}
+<div class="strip {% cycle "strip-grey","" %}">
+  <div class="container pt-3 pb-3 pt-md-3 pb-md-3">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-12 col-md-4 order-1 order-md-{% cycle 1,2 %}">
+        <h4 class="text-center">{{ function.title }}</h4>
+        {% if function.description %}
+        <p>{{ function.description | markdownify }}</p>
+        {% endif %}
+      </div>
+      <div class="col-12 col-md-8 order-2 order-md-{% cycle 2,1 %}">
+        <img class="img-fluid d-block" src="{{function.image}}" alt="{{ function.title }}"/>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+{% endif %}
+
+<div class="strip">
+  <div class="container pt-3 pb-3 pt-md-3 pb-md-3">
+    <h1>{{ site.data.landing_titles.pricing_title }}</h1>
+    <div class="row justify-content-start">
+      <div class="col-12 content">
+        {% capture pricing_include %}{% include_relative _landing/pricing.md %}{% endcapture %}
+        {{ pricing_include | markdownify }}
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="strip strip-grey">
   <div class="container pt-3 pb-6 pt-md-3 pb-md-10">
+    <h1>{{ site.data.landing_titles.final_title }}</h1>
+    <div class="row justify-content-start">
+      <div class="col-12 content">
+        {{ site.data.landing_titles.final_claim | markdownify }}
+      </div>
+    </div>
     <div class="row justify-content-center">
       {% include ms-store.html cid=end %}
     </div>
