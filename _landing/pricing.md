@@ -6,6 +6,7 @@ The app costs  ~~$10 / 10€~~ when purchased from the Microsoft Store.
 
 For this price, you get an app that:
 
+- Runs on **Windows 10** and **11**
 - Integrates with the built-in Night Light Windows feature
 - Automatically adjusts the **display brightness** to the time of day
 - Installs with **no fuss**
