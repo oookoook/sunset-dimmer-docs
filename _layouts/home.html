@@ -111,72 +111,6 @@ bodyClass: "page-home"
   </div>
 </div>
 
-<div class="strip strip-grey">
-  <div class="container pt-3 pb-3 pt-md-3 pb-md-3">
-    <h1>{{ site.data.landing_titles.args_title }}</h1>
-    <div class="row justify-content-start">
-      <div class="col-12 content">
-        {% capture args_include %}{% include_relative _landing/arguments.md %}{% endcapture %}
-        {{ args_include | markdownify }}
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="strip">
-  <div class="container pt-3 pb-3 pt-md-3 pb-md-3">
-    <div class="row justify-content-center">
-      {% include ms-store.html cid=args %}
-    </div>
-  </div>
-</div>
-{% if site.testimonial %}
-<div class="strip">
-  <div class="container pt-3 pb-3 pt-md-3 pb-md-3">
-    <h1>{{ site.data.landing_titles.testimonials_title }}</h1>
-    <div class="row">
-      {% assign promoted_testimonials = site.testimonial | where: "promoted", true | sort: "weight" %}
-      {% for testimonial in promoted_testimonials %}
-      <div class="col-12 col-md-6 mb-2">
-        <div class="testimonial testimonial-summary testimonial-summary-large">
-          {% if testimonial.image %}
-          <div class="testimonial-image">
-            <img width="90" height="90" alt="{{ testimonial.title }}" class="img-fluid mb-2"
-              src="{{ testimonial.image | relative_url }}" />
-          </div>
-          {% endif %}
-          <div class="testimonial-meta">
-            <h2 class="testimonial-name"><!--<a href="{{ testimonial.url | relative_url }}">{{ testimonial.title }}</a>-->{{ testimonial.title }}</h2>
-            <p class="testimonial-description">{{ testimonial.jobtitle }}</p>
-            {% if testimonial.stars%}
-              <p>Rating: {% for i in (1..testimonial.stars) %}<img src="images/testimonial/star.svg">{% endfor %}</p>
-            {% endif %}
-            {% if testimonial.exurl %}
-            <!--
-            <a target="_blank" href="{{ testimonial.exturl }}" rel="noreferrer">Show more</a>
-            -->
-            {% endif %}
-          </div>
-          <div class="testimonial-content">{{ testimonial.content | truncate: 500 }}</div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</div>
-{% endif %}
-<div class="strip">
-  <div class="container pt-3 pb-3 pt-md-3 pb-md-3">
-    <div class="row justify-content-start">
-      <div class="col-12">
-        <div class="content">
-          {{ content }}
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 {%if site.data.functions %}
 
 <div class="strip">
@@ -204,6 +138,94 @@ bodyClass: "page-home"
 {% endfor %}
 
 {% endif %}
+
+<div class="strip">
+  <div class="container pt-3 pb-3 pt-md-3 pb-md-3">
+    <h1>{{ site.data.landing_titles.args_title }}</h1>
+    <div class="row justify-content-start">
+      <div class="col-12 content">
+        {% capture args_include %}{% include_relative _landing/arguments.md %}{% endcapture %}
+        {{ args_include | markdownify }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="strip">
+  <div class="container pt-3 pb-3 pt-md-3 pb-md-3">
+    <div class="row justify-content-center">
+      {% include ms-store.html cid=args %}
+    </div>
+  </div>
+</div>
+
+{% if site.testimonial %}
+<div class="strip">
+  <div class="container pt-3 pb-3 pt-md-3 pb-md-3">
+    <h1>{{ site.data.landing_titles.testimonials_title }}</h1>
+    <div class="row">
+      {% assign promoted_testimonials = site.testimonial | where: "promoted", true | sort: "weight" %}
+      {% for testimonial in promoted_testimonials %}
+      <div class="col-12 col-md-6 mb-2">
+        <div class="testimonial testimonial-summary testimonial-summary-large h-100">
+          
+          <div class="testimonial-image">
+            {% if testimonial.image %}
+            <img width="90" height="90" alt="{{ testimonial.title }}" class="img-fluid mb-2"
+              src="{{ testimonial.image | relative_url }}" />
+              {% else %}
+              <img width="90" height="90" alt="{{ testimonial.title }}" class="img-fluid mb-2"
+              src="https://avatars.dicebear.com/api/croodles/{{ testimonial.title | url_encode }}.svg" />
+              {% endif %}
+          </div>
+          
+          
+          <div class="testimonial-meta">
+            <h2 class="testimonial-name"><!--<a href="{{ testimonial.url | relative_url }}">{{ testimonial.title }}</a>-->{{ testimonial.title }}</h2>
+            <p class="testimonial-description">{{ testimonial.jobtitle }}</p>
+            {% if testimonial.stars%}
+              <p>Rating: {% for i in (1..testimonial.stars) %}<img src="images/testimonial/star.svg">{% endfor %}</p>
+            {% endif %}
+            {% if testimonial.exurl %}
+            <!--
+            <a target="_blank" href="{{ testimonial.exturl }}" rel="noreferrer">Show more</a>
+            -->
+            {% endif %}
+          </div>
+          <div class="testimonial-content">{{ testimonial.content | truncate: 500 }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<div class="strip">
+  <div class="container pt-3 pb-3 pt-md-3 pb-md-3">
+    <h1>{{ site.data.landing_titles.detail_title }}</h1>
+    <div class="row justify-content-start">
+      <div class="col-12 content">
+        {% capture detail_include %}{% include_relative _landing/detail.md %}{% endcapture %}
+        {{ detail_include | markdownify }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="strip strip-grey">
+  <div class="container pt-3 pb-3 pt-md-3 pb-md-3">
+    <h1>{{ site.data.landing_titles.steps_title }}</h1>
+    <div class="row justify-content-start">
+      <div class="col-12 content">
+        {% capture steps_include %}{% include_relative _landing/steps.md %}{% endcapture %}
+        {{ steps_include | markdownify }}
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <div class="strip">
   <div class="container pt-3 pb-3 pt-md-3 pb-md-3">

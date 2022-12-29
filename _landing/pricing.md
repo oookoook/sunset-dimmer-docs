@@ -13,6 +13,6 @@ For this price, you get an app that:
 - Comes with a **lifetime** license
 - E-mail **support** available
 
-Don't worry. The Microsoft Store provides a **free two-week** trial version of the app so you can see how beneficial it is to your **work comfort and productivity**.
+Don't worry. The Microsoft Store provides a **free two-week trial** version of the app so you can see how beneficial it is to your **work comfort and productivity**.
 
 Alternatively, you can **build the app yourself from the [source code](https://github.com/oookoook/NighttimeDisplayDimmer)** free of charge. However, this method is recommended only for skilled software developers.

@@ -1,0 +1,5 @@
+- Configure the Night Light Windows feature to enable and disable on sunset and sunrise or at desired hours
+- Install Sunset Dimmer from Microsoft Store
+- Open the Sunset Dimmer app
+- Configure the desired brightness levels for day and night
+- Save configuration and forget

@@ -117,5 +117,10 @@ SOFTWARE.
 
 ---
 
-NOT USED
-[Image by wirestock](https://www.freepik.com/free-photo/beautiful-shining-stars-night-sky_7631083.htm#query=night&position=5&from_view=search&track=sph#position=5&query=night) on Freepik
+# This web page resources
+
+Avatars in testimonials are generated using the [DiceBear service](https://avatars.dicebear.com/).
+
+The avatar set used is [croodles](https://avatars.dicebear.com/styles/croodles) by [vijay verma](https://www.figma.com/@realvjy).
+
+The eye icon in the feature section is provided by [Ionicons](https://ionic.io/ionicons) under MIT Licence.

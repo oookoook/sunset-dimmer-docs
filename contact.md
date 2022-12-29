@@ -4,13 +4,14 @@ layout: contact
 description: Contact
 ---
 
-Lorem markdownum aequalis strigis. Saetigeri iubeas, vultu huic alvum nondum de obside ut laniavit arbor palmis, cum quin. Rupes vetat videndo, armigerae crimen habet Priamum nec.
+The Sunset Dimmer app is developed and maintained by Adam Kučera, a Czechia-based software developer.
 
-| Day       | Opening Hours   |
-| --------- | --------------- |
-| Tuesday   | 8:30am - 5:00pm |
-| Wednesday | 8:30am - 5:00pm |
-| Thursday  | 8:30am - 5:00pm |
-| Friday    | 8:30am - 5:00pm |
-| Saturday  | 10:am - 4:00pm  |
-| Saturday  | Closed          |
+You can contact me using the e-mail above or visit my profiles on various platforms:
+
+- [LinkedIn](https://www.linkedin.com/in/adam-kucera-sw-dev/)
+- [Upwork](https://www.upwork.com/freelancers/~01b150b9ae98543b67)
+- [GitHub](https://github.com/oookoook)
+
+Currently, I am **Open for hire** for your software development projects.
+
+Looking forward to hearing from you!
