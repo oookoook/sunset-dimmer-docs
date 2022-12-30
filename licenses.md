@@ -121,3 +121,5 @@ Avatars in testimonials are generated using the [DiceBear service](https://avata
 The avatar set used is [croodles](https://avatars.dicebear.com/styles/croodles) by [vijay verma](https://www.figma.com/@realvjy).
 
 The eye icon in the feature section is provided by [Ionicons](https://ionic.io/ionicons) under MIT Licence.
+
+Sale icon is downloaded from [Iconfinder.com](https://www.iconfinder.com/icons/3586369/discount_price_sale_icon)
