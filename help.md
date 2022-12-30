@@ -1,10 +1,8 @@
 ---
-title: Help
+title: Help and FAQ
 layout: page
-description: Help
+description: Help and FAQ
 ---
-
-# Help and FAQ
 
 Here you can find the answers to the questions asked most often.
 
