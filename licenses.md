@@ -3,9 +3,6 @@ title: License
 layout: page
 description: License
 ---
-
-# License
-
 ## Nighttime Display Dimmer
 MIT License
 
