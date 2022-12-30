@@ -1,9 +1,7 @@
 ---
-title: License
+title: Privacy policy
 layout: page
-description: License
+description: Privacy policy
 ---
-
-# Privacy policy
 
 The Sunset Dimmer  **does not** access, collect, or transmit personal information (data that could be used to identify a person) in any way.
