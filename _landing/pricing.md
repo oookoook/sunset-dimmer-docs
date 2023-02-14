@@ -1,6 +1,6 @@
 The app costs  ~~$10 / 10€~~ when purchased from the Microsoft Store.
 
-{% include sale.html title='New Year\'s sale – 50% OFF' text='Use a limited offer of **50% off** to help you with your **New Year\'s resolution** - finishing your thesis, writing a novel, or getting promoted. This offer is valid **only** until the **end of January** 2023.' %}
+{% include sale.html title='Waitng for spring sale – 50% OFF' text='Use an offer of **50% off** to help you do the most work while waiting for **spring to come** - finishing your thesis, writing a novel, or getting promoted.' %}
 
 For this price, you get an app that:
 
